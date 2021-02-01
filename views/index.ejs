@@ -1,15 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <% include ./partials/header %>
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-    <a href="/about" > ABOUT </a> <br />
-    <a href="/contact" > CONTACT </a> <br />
-    <a href="/projects" > PROJECTS </a> <br />
-    <a href="/services" > SERVICES </a> <br />
+    <!-- Navigation-->
+    <% include ./partials/navmenu %>
+
+        <!--Portfolio Grid Section-->
+        <section class="portfolio">
+          <div class="container">
+
+            <!-- name -->
+
+            <h1> Welcome </h1>
+
+            <h3> I'm  <%= name %>  </h3>
+
+            <a href="/about"> <p> To know more About me </p> </a>
+
+          </div>
+        </section>
+
+
+    <!--Footer-->
+    <% include ./partials/footer %>
   </body>
 </html>

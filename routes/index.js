@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', (req, res, next) =>{
-  res.render('index', { title: 'Index' });
+  res.render('index', { title: 'Index', name:"nikhil" });
 });
 
 router.get("/about", (req, res, next)=>{
@@ -15,8 +15,18 @@ router.get("/services",(req, res, next)=>{
 });
 
 router.get("/contact",(req, res, next)=>{
-  res.render("contact", { title: "Contact"})
+  res.render("contact", 
+  { 
+    title: "Contact",
+    action: "/thankyou", //post action for the form
+    fields: [
+      {name:'name',type:'text',property:'required'},    //first field for the form
+      {name:'email',type:'text',property:'required'},   //second field for the form
+      {name:'mobile',type:'number',property:'required'}   //another field for the form
+      ]
+  });
 });
+
 
 router.get("/projects",(req, res, next)=>{
   res.render("projects", { title: "Project"})
